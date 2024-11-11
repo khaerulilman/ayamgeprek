@@ -10,10 +10,28 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&display=swap" rel="stylesheet">
+    <style>
+          .chatbot-container {
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        background-color: #f9f9f9; /* Warna latar belakang kustom */
+    }
+
+    .chatbot-header {
+        background-color: #333; /* Warna header kustom */
+        color: #fff;
+        padding: 10px;
+    }
+
+    .chatbot-message {
+        font-size: 14px;
+        color: #333;
+    }
+    </style>
 </head>
 
 <body>
-    <script type="module">
+<script type="module">
     import Chatbot from "https://cdn.jsdelivr.net/npm/flowise-embed/dist/web.js"
     Chatbot.init({
         chatflowid: "e1f1737d-674b-4f0a-aafb-ddf2379b45fb",
