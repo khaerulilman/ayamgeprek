@@ -10,24 +10,6 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&display=swap" rel="stylesheet">
-    <style>
-          .chatbot-container {
-        border-radius: 10px;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        background-color: #f9f9f9; /* Warna latar belakang kustom */
-    }
-
-    .chatbot-header {
-        background-color: #333; /* Warna header kustom */
-        color: #fff;
-        padding: 10px;
-    }
-
-    .chatbot-message {
-        font-size: 14px;
-        color: #333;
-    }
-    </style>
 </head>
 
 <body>
@@ -36,7 +18,81 @@
     Chatbot.init({
         chatflowid: "e1f1737d-674b-4f0a-aafb-ddf2379b45fb",
         apiHost: "http://localhost:3000",
+        chatflowConfig: {
+            // topK: 2
+        },
+        theme: {
+            button: {
+                backgroundColor: "#3B81F6",
+                right: 20,
+                bottom: 20,
+                size: 48,
+                dragAndDrop: true,
+                iconColor: "white",
+                customIconSrc: "https://raw.githubusercontent.com/walkxcode/dashboard-icons/main/svg/google-messages.svg",
+                autoWindowOpen: {
+                    autoOpen: true,
+                    openDelay: 2,
+                    autoOpenOnMobile: false,
+                },
+                style: {
+                    borderRadius: "50%", // Menambahkan border radius untuk tombol bulat
+                    boxShadow: "0 4px 12px rgba(0, 0, 0, 0.2)", // Efek bayangan
+                    transition: "transform 0.3s", // Animasi saat hover
+                },
+                onHoverStyle: {
+                    transform: "scale(1.1)", // Membesarkan tombol saat dihover
+                }
+            },
+            tooltip: {
+                showTooltip: true,
+                tooltipMessage: 'Hi There 👋!',
+                tooltipBackgroundColor: 'black',
+                tooltipTextColor: 'white',
+                tooltipFontSize: 16,
+            },
+            chatWindow: {
+                showTitle: true,
+                title: 'Flowise Bot',
+                titleAvatarSrc: 'https://raw.githubusercontent.com/walkxcode/dashboard-icons/main/svg/google-messages.svg',
+                showAgentMessages: true,
+                welcomeMessage: 'Hello! This is custom welcome message',
+                errorMessage: 'This is a custom error message',
+                backgroundColor: "#ffffff",
+                backgroundImage: '', // Kosongkan jika tidak ada gambar
+                height: 700,
+                width: 400,
+                fontSize: 16,
+                starterPromptFontSize: 15,
+                clearChatOnReload: false,
+                botMessage: {
+                    backgroundColor: "#f7f8ff",
+                    textColor: "#303235",
+                    showAvatar: true,
+                    avatarSrc: "https://raw.githubusercontent.com/zahidkhawaja/langchain-chat-nextjs/main/public/parroticon.png",
+                },
+                userMessage: {
+                    backgroundColor: "#3B81F6",
+                    textColor: "#ffffff",
+                    showAvatar: true,
+                    avatarSrc: "https://raw.githubusercontent.com/zahidkhawaja/langchain-chat-nextjs/main/public/usericon.png",
+                    style: {
+                        borderRadius: "12px", // Membuat pesan pengguna lebih rounded
+                    }
+                },
+                textInput: {
+                    placeholder: 'Type your question',
+                    backgroundColor: '#ffffff',
+                    textColor: '#303235',
+                    sendButtonColor: '#3B81F6',
+                    maxChars: 50,
+                    maxCharsWarningMessage: 'You exceeded the characters limit. Please input less than 50 characters.',
+                    autoFocus: true,
+                }
+            }
+        }
     })
+
 </script>
     <nav class="navbar navbar-expand-lg bg-black p-3">
         <div class="container-fluid">
